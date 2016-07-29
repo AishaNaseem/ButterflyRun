@@ -1,16 +1,13 @@
 ﻿module managers {
     // Image and Sound Manifest;
     var assetManifest = [
-        { id: "ocean", src: "assets/images/gardennew.png" },
-        { id: "engine", src: "assets/sounds/butterfly.mp3" },
-        { id: "enemyEngine", src: "assets/sounds/enemy.mp3" },
-        { id: "soundtrack", src: "assets/sounds/gamestart1.mp3" },
-        { id: "explosion", src: "assets/sounds/FX233.mp3" },
-        { id: "bullet", src: "assets/sounds/bullet.mp3" },
-        { id: "coin", src: "assets/sounds/FX236.mp3" },
-        { id: "lives", src: "assets/sounds/lives.mp3" },
-        { id: "level1", src: "assets/sounds/FX239.mp3" },
-        { id: "level2", src: "assets/sounds/level2.mp3" }
+        { id: "garden", src: "assets/images/gardennew.png" },
+        { id: "butterfly", src: "assets/sounds/butterfly.mp3" },
+        { id: "gamestart", src: "assets/sounds/gamestart1.mp3" },
+        { id: "explosion", src: "assets/sounds/explosion.mp3" },
+        { id: "flowerpicking", src: "assets/sounds/flowerpicking.mp3" },
+           { id: "levelstart", src: "assets/sounds/LevelStart.mp3" },
+        
     ];
 
     // SpriteSheet Data Object
@@ -74,14 +71,14 @@
         ],
         "animations": {
             "backbutton": [0],
-            "bigbullet": [1], 
+            "bigbullet": [1],
             "bigexplosion": {
                 frames: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
                 next: false,
                 speed: 0.5
             },
-            "cloud": [22],
-            "yellowCoin": {
+            "netpic": [22],
+            "flowerpic": {
                 frames: [23, 24, 25, 26, 27, 28, 29, 30, 31, 32],
                 speed: 0.02
             },
@@ -95,13 +92,13 @@
                 speed: 0.5
             },
             "instructionsButton": [43],
-            "island1": [44],
-            "island2": [45],
-            "plane": {
+            "plant1": [44],
+            "plant2": [45],
+            "butterfly": {
                 frames: [46, 47, 48],
                 speed: 1
             },
-            "flickerPlane": {
+            "flickerbutterfly": {
                 frames: [48, 49],
                 speed: 0.01
             },
@@ -253,7 +250,7 @@
             this.loader = new createjs.LoadQueue();
             this.loader.installPlugin(createjs.Sound);
             this.loader.loadManifest(assetManifest);
-            
+
             this.atlas = new createjs.SpriteSheet(spriteSheetData);
             this.lightningAtlas = new createjs.SpriteSheet(lightningData);
             this.bitMapFont = new createjs.SpriteSheet(bitMapFontData);

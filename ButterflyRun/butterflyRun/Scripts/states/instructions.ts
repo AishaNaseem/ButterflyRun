@@ -17,7 +17,7 @@ module states {
 
     // Instruction State
     export function instructionState() {
-        ocean.update();
+        garden.update();
     }
 
     // Instructions Scene
@@ -29,16 +29,17 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        ocean = new objects.Ocean(game);
+        garden = new objects.Garden(game);
 
         instructionsArray = [
             "Game Instructions",
             "You are a Butterlfy, picking up",
             "flowers from plants",
             "but be careful not",
-            "too close to the catching net. Your butterfly",
-            "will fall apart if it is hit by net",
-            "too many times. Steer with the mouse",
+            "too close to the catching net.",
+            "Your butterfly will fall apart",
+            "if it is hit by net too many times.",
+            "Steer with the mouse",
             "or by touching the screen.",
             "Good Luck!"
         ];
@@ -56,7 +57,7 @@ module states {
             gameInstructions[line] = new createjs.Text(instructionsArray[line], instructionsFont, constants.LABEL_COLOUR);
             gameInstructions[line].x = stage.canvas.width * 0.05;
             gameInstructions[line].y = 20 + (lineSpace * line);
-           // gameInstructions[line].y = stage.canvas.height * 0.05;
+            // gameInstructions[line].y = stage.canvas.height * 0.05;
             //gameInstructions[line].x = 20 + (lineSpace * line);
             game.addChild(gameInstructions[line]);
         }

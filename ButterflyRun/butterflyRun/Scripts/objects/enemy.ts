@@ -18,7 +18,7 @@ module objects {
         update() {
             this.y += this.dy;
             if (this.y > -stage.canvas.height) {
-                 this.enginePlay = true;
+                this.enginePlay = true;
             }
 
             if (this.y > stage.canvas.height * 2) {
@@ -39,7 +39,7 @@ module objects {
             if ((this.enginePlay == true) && (this.engineSound.playState != "playSucceeded")) {
                 this.engineSound.play();
             }
-            else if(this.enginePlay == false) {
+            else if (this.enginePlay == false) {
                 this.engineSound.stop();
             }
 

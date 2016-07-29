@@ -1,44 +1,39 @@
 /// <reference path="constants.ts" />
 /// <reference path="managers/asset.ts" />
 /// <reference path="objects/gameobject.ts" />
-/// <reference path="objects/cloud.ts" />
-/// <reference path="objects/island.ts" />
-/// <reference path="objects/ocean.ts" />
-/// <reference path="objects/plane.ts" />
+/// <reference path="objects/net.ts" />
+/// <reference path="objects/plant.ts" />
+/// <reference path="objects/garden.ts" />
+/// <reference path="objects/butterfly.ts" />
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
-/// <reference path="objects/coin.ts" />
+/// <reference path="objects/flower.ts" />
 /// <reference path="objects/explosion.ts" />
 /// <reference path="objects/level.ts" />
 /// <reference path="objects/lightning.ts" />
-/// <reference path="objects/enemy.ts" />
-/// <reference path="objects/bullet.ts" />
 /// <reference path="objects/stats.ts" />
 /// <reference path="managers/collision.ts" />
-/// <reference path="managers/bulletmanager.ts" />
 /// <reference path="states/play.ts" />
-/// <reference path="states/level2.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 /// <reference path="states/instructions.ts" />
-// Mail Pilot Version 16 - FINAL VERSION FOR THIS SEMESTER
+// Butterfly Run 2016 
 // game containers
 var canvas;
 var stage;
 var game;
 // game objects
-var ocean;
-var plane;
-var island;
-var coin;
-var clouds = []; // Clouds array;
+var garden;
+var butterfly;
+var plant;
+var flower;
+var nets = []; // net array;
 var enemies = []; // Enemy array;
 var scoreboard;
 var levelLabel;
 // object managers
 var collision;
-var bulletManager;
 var tryAgain;
 // global game variables
 var screenScale;
@@ -47,8 +42,7 @@ var currentStateFunction;
 var gamePlaying = false;
 var startButton;
 var startScreen;
-var mailPilotLabel;
-var swirl;
+var butterflyRunLabel;
 // Preload function - Loads Assets and initializes game;
 function preload() {
     managers.Assets.init();
@@ -58,48 +52,39 @@ function preload() {
     stage.enableMouseOver(30);
     createjs.Ticker.setFPS(60);
     createjs.Ticker.addEventListener("tick", gameLoop);
-    optimizeForMobile();
     showStartScreen();
 }
 // Start Screen 
 function showStartScreen() {
     game = new createjs.Container();
-    var screenFont = "100px Dock51";
-    var introPlaneWidth = 447;
-    var introPlaneHeight = 195;
-    // Add Static Ocean Image
-    var introOcean = new createjs.Bitmap("assets/images/gardennew.png");
-    game.addChild(introOcean);
-    // Add Swirl
-    /*swirl = new createjs.Bitmap("assets/images/swirl.png");
-    
-    swirl.regX = 512;
-    swirl.regY = 512;
-    swirl.y = stage.canvas.height * 0.5;
-    swirl.x = stage.canvas.width * 0.5;
-    game.addChild(swirl);*/
-    // Add Large Plane Image
+    var screenFont = "40px Arial";
+    var introButterflyWidth = 447;
+    var introButterflyHeight = 195;
+    // Add Static Garden Image
+    var introGarden = new createjs.Bitmap("assets/images/gardennew.png");
+    game.addChild(introGarden);
+    // Add Large Butterfly Image
     if (stage.canvas.width == constants.GAME_WIDTH) {
-        var introPlane = new createjs.Bitmap("assets/images/ButterflyBig.png");
+        var introButterfly = new createjs.Bitmap("assets/images/ButterflyBig.png");
     }
     else {
         var introPlane = new createjs.Bitmap("assets/images/ButterflyBig.png");
-        screenFont = "50px Dock51";
-        introPlaneWidth = 224;
-        introPlaneHeight = 98;
+        screenFont = "30px Arial";
+        introButterflyWidth = 224;
+        introButterflyHeight = 98;
     }
-    introPlane.regX = introPlaneWidth * 0.5;
-    introPlane.regY = introPlaneHeight * 0.5;
-    introPlane.x = stage.canvas.width * 0.5;
-    introPlane.y = stage.canvas.height * 0.5;
-    game.addChild(introPlane);
+    introButterfly.regX = introButterflyWidth * 0.5;
+    introButterfly.regY = introButterflyHeight * 0.5;
+    introButterfly.x = stage.canvas.width * 0.5;
+    introButterfly.y = stage.canvas.height * 0.5;
+    game.addChild(introButterfly);
     // Add Mail Pilot Label
-    var mailPilotLabel = new createjs.Text("Butterfly Run", screenFont, constants.LABEL_COLOUR);
-    mailPilotLabel.regX = mailPilotLabel.getBounds().width * 0.5;
-    mailPilotLabel.regY = mailPilotLabel.getBounds().height * 0.5;
-    mailPilotLabel.x = stage.canvas.width * 0.5;
-    mailPilotLabel.y = 120;
-    game.addChild(mailPilotLabel);
+    var butterflyRunLabel = new createjs.Text("BUTTERFLY RUN", screenFont, constants.LABEL_COLOUR);
+    butterflyRunLabel.regX = butterflyRunLabel.getBounds().width * 0.1;
+    butterflyRunLabel.regY = butterflyRunLabel.getBounds().height * 0.1;
+    butterflyRunLabel.x = stage.canvas.width * 0.1;
+    butterflyRunLabel.y = 80;
+    game.addChild(butterflyRunLabel);
     stage.addChild(game);
 }
 // init called after Assets have been loaded.
@@ -113,20 +98,6 @@ function init() {
         gamePlaying = true;
         changeState(currentState);
     });
-}
-// Add touch support for mobile devices and initial Screen Size
-function optimizeForMobile() {
-    //if (window.innerWidth < constants.GAME_WIDTH) {
-    if (window.innerHeight < constants.GAME_HEIGHT) {
-        // stage.canvas.width = 320;
-        stage.canvas.height = 320;
-    }
-    if (createjs.Touch.isSupported()) {
-        createjs.Touch.enable(stage);
-    }
-    // screenScale = stage.canvas.width / constants.GAME_WIDTH;
-    screenScale = stage.canvas.height / constants.GAME_HEIGHT;
-    stage.update();
 }
 // Game Loop
 function gameLoop(event) {
@@ -151,11 +122,6 @@ function changeState(state) {
             currentStateFunction = states.playState;
             states.play();
             break;
-        // case constants.LEVEL2_STATE:
-        // instantiate play screen
-        //    currentStateFunction = states.Level2State;
-        //  states.Level2();
-        // break;
         case constants.GAME_OVER_STATE:
             currentStateFunction = states.gameOverState;
             // instantiate game over screen

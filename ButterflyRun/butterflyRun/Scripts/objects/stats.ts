@@ -7,7 +7,7 @@ module objects {
             this.game = game;
             this.y = 460;
             this.game.addChild(this);
-            
+
         }
 
         update() {

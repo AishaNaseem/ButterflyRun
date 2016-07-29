@@ -1,14 +1,14 @@
 ﻿/// <reference path="../constants.ts" />
 /// <reference path="../objects/button.ts" />
-/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
+/// <reference path="../objects/net.ts" />
+/// <reference path="../objects/plant.ts" />
 /// <reference path="../objects/label.ts" />
-/// <reference path="../objects/ocean.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/garden.ts" />
+/// <reference path="../objects/butterfly.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 module states {
     export function gameOverState() {
-        ocean.update();
+        garden.update();
     }
 
     // Restart Game when Try Again Button is clicked
@@ -21,7 +21,7 @@ module states {
     }
 
     // Read High Score from File
-    export function readHighScore(){
+    export function readHighScore() {
         var xhr: XMLHttpRequest = new XMLHttpRequest();
 
         xhr.open("post", "Scripts/scores.txt", false);
@@ -54,7 +54,7 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        ocean = new objects.Ocean(game);
+        garden = new objects.Garden(game);
 
         // Show Cursor
         stage.cursor = "default";
@@ -67,7 +67,7 @@ module states {
         highScoreString = scoreboard.highScore.toString();
 
         // Display Game Over
-        gameOverLabel = new objects.Label(stage.canvas.width * 0.5 , 40, "game over");
+        gameOverLabel = new objects.Label(stage.canvas.width * 0.5, 40, "game over");
         gameOverLabel.fontSize(50);
         game.addChild(gameOverLabel);
 
@@ -99,7 +99,7 @@ module states {
 
         // Adjust Display for Screen Size
         if (screenScale < 1) {
-           gameOverLabel.fontSize(32);
+            gameOverLabel.fontSize(32);
             finalScoreLabel.fontSize(32);
             finalScore.fontSize(32);
             highScoreLabel.fontSize(32);

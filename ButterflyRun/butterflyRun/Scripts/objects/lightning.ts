@@ -1,13 +1,13 @@
-﻿/// <reference path="cloud.ts" />
+﻿/// <reference path="net.ts" />
 /// <reference path="../managers/asset.ts" />
 module objects {
     export class Lightning extends createjs.Sprite {
-        cloud: createjs.Sprite;
+        net: createjs.Sprite;
         width: number;
         height: number;
-        constructor(cloud: createjs.Sprite) {
+        constructor(net: createjs.Sprite) {
             super(managers.Assets.lightningAtlas, "lightning");
-            this.cloud = cloud;
+            this.net = net;
 
             if (screenScale < 1) {
                 // Adjust lightning to Screen Scale
@@ -19,19 +19,19 @@ module objects {
                 this.scaleX = 2;
                 this.scaleY = 2;
             }
-            
+
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
-            this.x = this.cloud.x;
-            this.y = this.cloud.y;
-             
+            this.x = this.net.x;
+            this.y = this.net.y;
+
         }
 
         update() {
-            this.x = this.cloud.x;
-            this.y = this.cloud.y;
+            this.x = this.net.x;
+            this.y = this.net.y;
         }
 
     }

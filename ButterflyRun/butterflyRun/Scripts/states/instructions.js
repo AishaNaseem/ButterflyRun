@@ -15,7 +15,7 @@ var states;
     states.backButtonClicked = backButtonClicked;
     // Instruction State
     function instructionState() {
-        ocean.update();
+        garden.update();
     }
     states.instructionState = instructionState;
     // Instructions Scene
@@ -25,15 +25,16 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        ocean = new objects.Ocean(game);
+        garden = new objects.Garden(game);
         instructionsArray = [
             "Game Instructions",
             "You are a Butterlfy, picking up",
             "flowers from plants",
             "but be careful not",
-            "too close to the catching net. Your butterfly",
-            "will fall apart if it is hit by net",
-            "too many times. Steer with the mouse",
+            "too close to the catching net.",
+            "Your butterfly will fall apart",
+            "if it is hit by net too many times.",
+            "Steer with the mouse",
             "or by touching the screen.",
             "Good Luck!"
         ];

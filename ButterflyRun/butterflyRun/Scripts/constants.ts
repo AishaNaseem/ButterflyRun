@@ -12,8 +12,8 @@
 
     // Game Constants
     export var CLOUD_NUM: number = 3;
-    export var LABEL_FONT = "28px Dock51";
-    export var LABEL_COLOUR = "#C8CFF3";
+    export var LABEL_FONT = "28px Arial";
+    export var LABEL_COLOUR = "#660033";
     export var PLANE_LIVES = 3;
     export var ENEMY_NUM: number = 1;
 

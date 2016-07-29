@@ -17,8 +17,8 @@
         }
 
         update() {
-           // this.y += this.dy
-            this.x+=this.dx
+            // this.y += this.dy
+            this.x += this.dx
             //if (this.y > (stage.canvas.height + this.height)) {
             //  this.dy = 0;
             if (this.x > (stage.canvas.width + this.width)) {

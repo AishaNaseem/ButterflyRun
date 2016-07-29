@@ -1,19 +1,18 @@
-/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/enemy.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/net.ts" />
+/// <reference path="../objects/plant.ts" />
+/// <reference path="../objects/butterfly.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 var managers;
 (function (managers) {
     // Collision Manager Class
     var Collision = (function () {
-        function Collision(plane, coin, clouds, scoreboard, game, enemies, bullets) {
-            this.clouds = [];
+        function Collision(butterfly, flower, net, scoreboard, game, enemies, bullets) {
+            this.net = [];
             this.enemies = [];
             this.bullets = [];
-            this.plane = plane;
-            this.coin = coin;
-            this.clouds = clouds;
+            this.butterfly = butterfly;
+            this.flower = flower;
+            this.net = net;
             this.enemies = enemies;
             this.bullets = bullets;
             this.scoreboard = scoreboard;
@@ -32,67 +31,67 @@ var managers;
             return result;
         };
         // check collision between plane and any cloud object
-        Collision.prototype.planeAndCloud = function (cloud) {
+        Collision.prototype.planeAndCloud = function (net) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.x;
-            p1.y = this.plane.y;
-            p2.x = cloud.x;
-            p2.y = cloud.y;
+            p1.x = this.butterfly.x;
+            p1.y = this.butterfly.y;
+            p2.x = net.x;
+            p2.y = net.y;
             //if (this.distance(p1, p2) < ((this.plane.height * 0.5) + (cloud.height * 0.5))) {
-            if (this.distance(p1, p2) < ((this.plane.width * 0.5) + (cloud.width * 0.5))) {
+            if (this.distance(p1, p2) < ((this.butterfly.width * 0.5) + (net.width * 0.5))) {
                 createjs.Sound.play("explosion");
                 // show explosion animation
                 var explosion = new objects.Explosion(game);
-                explosion.x = this.plane.x;
-                explosion.y = this.plane.y;
+                explosion.x = this.butterfly.x;
+                explosion.y = this.butterfly.y;
                 explosion.on("animationend", function (e) { explosion.remove(); });
-                this.plane.gotoAndPlay("flickerPlane");
-                this.plane.onStage = false;
+                this.butterfly.gotoAndPlay("flickerbutterfly");
+                this.butterfly.onStage = false;
                 setTimeout(function (e) {
-                    this.plane.gotoAndPlay("plane");
-                    this.plane.onStage = true;
+                    this.butterfly.gotoAndPlay("butterfly");
+                    this.butterfly.onStage = true;
                 }, 2000);
                 this.scoreboard.lives -= 1;
-                cloud.reset();
+                net.reset();
             }
         };
-        // check collision between plane and coin
+        // check collision between butterfly and flower
         Collision.prototype.planeAndCoin = function () {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.x;
-            p1.y = this.plane.y;
-            p2.x = this.coin.x;
-            p2.y = this.coin.y;
-            if (this.distance(p1, p2) < ((this.plane.height * 0.5) + (this.coin.height * 0.5))) {
-                createjs.Sound.play("coin");
+            p1.x = this.butterfly.x;
+            p1.y = this.butterfly.y;
+            p2.x = this.flower.x;
+            p2.y = this.flower.y;
+            if (this.distance(p1, p2) < ((this.butterfly.height * 0.5) + (this.flower.height * 0.5))) {
+                createjs.Sound.play("flowerpicking");
                 this.scoreboard.score += 100;
                 // increase player's lives every 1500 points
                 if (this.scoreboard.score % 1500 == 0) {
                     createjs.Sound.play("lives");
                     this.scoreboard.lives++;
                 }
-                this.coin.onStage = false;
+                this.flower.onStage = false;
             }
         };
-        // check collision between plane and enemy objects
+        //check collision between butterfly and enemy objects
         Collision.prototype.planeAndEnemy = function (enemy) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.x;
-            p1.y = this.plane.y;
+            p1.x = this.butterfly.x;
+            p1.y = this.butterfly.y;
             p2.x = enemy.x;
             p2.y = enemy.y;
-            if (this.distance(p1, p2) < ((this.plane.height * 0.5) + (enemy.height * 0.5))) {
+            if (this.distance(p1, p2) < ((this.butterfly.height * 0.5) + (enemy.height * 0.5))) {
                 createjs.Sound.play("explosion");
                 // show explosion animation
                 var explosion = new objects.Explosion(game);
-                explosion.x = this.plane.x;
-                explosion.y = this.plane.y;
+                explosion.x = this.butterfly.x;
+                explosion.y = this.butterfly.y;
                 explosion.on("animationend", function (e) { explosion.remove(); });
-                this.plane.gotoAndPlay("flickerPlane");
-                this.plane.onStage = false;
+                this.butterfly.gotoAndPlay("flickerPlane");
+                this.butterfly.onStage = false;
                 setTimeout(function (e) {
                     this.plane.gotoAndPlay("plane");
                     this.plane.onStage = true;
@@ -101,40 +100,15 @@ var managers;
                 enemy.reset();
             }
         };
-        // check collision between bullet and any enemy object
-        Collision.prototype.bulletAndEnemy = function (bullet, enemy) {
-            var p1 = new createjs.Point();
-            var p2 = new createjs.Point();
-            p1.x = bullet.x;
-            p1.y = bullet.y;
-            p2.x = enemy.x;
-            p2.y = enemy.y;
-            if (this.distance(p1, p2) < ((bullet.height * 0.5) + (enemy.height * 0.5))) {
-                createjs.Sound.play("explosion");
-                // show explosion animation
-                var explosion = new objects.Explosion(game);
-                explosion.x = enemy.x;
-                explosion.y = enemy.y;
-                explosion.on("animationend", function (e) { explosion.remove(); });
-                this.scoreboard.score += 200;
-                enemy.reset();
-            }
-        };
         // Utility Function to Check Collisions
         Collision.prototype.update = function () {
-            if (plane.onStage == true) {
+            if (butterfly.onStage == true) {
                 for (var count = 0; count < constants.CLOUD_NUM; count++) {
-                    this.planeAndCloud(this.clouds[count]);
+                    this.planeAndCloud(this.net[count]);
                 }
                 this.planeAndCoin();
                 if (typeof this.enemies != "undefined") {
                     this.planeAndEnemy(this.enemies[0]);
-                    if (bulletManager.firing == true) {
-                        var len = this.bullets.length;
-                        for (var count = 0; count < len; count++) {
-                            this.bulletAndEnemy(this.bullets[count], this.enemies[0]);
-                        }
-                    }
                 }
             }
         };

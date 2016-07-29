@@ -2,7 +2,7 @@
 /// <reference path="../managers/asset.ts" />
 module objects {
     export class Button extends objects.GameObject {
-        constructor(x:number, y:number, buttonIDString: string) {
+        constructor(x: number, y: number, buttonIDString: string) {
             super(buttonIDString);
             this.x = x;
             this.y = y;

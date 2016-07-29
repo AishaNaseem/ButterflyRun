@@ -3,15 +3,15 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-/// <reference path="cloud.ts" />
+/// <reference path="net.ts" />
 /// <reference path="../managers/asset.ts" />
 var objects;
 (function (objects) {
     var Lightning = (function (_super) {
         __extends(Lightning, _super);
-        function Lightning(cloud) {
+        function Lightning(net) {
             _super.call(this, managers.Assets.lightningAtlas, "lightning");
-            this.cloud = cloud;
+            this.net = net;
             if (screenScale < 1) {
                 // Adjust lightning to Screen Scale
                 this.scaleX = screenScale;
@@ -26,12 +26,12 @@ var objects;
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
-            this.x = this.cloud.x;
-            this.y = this.cloud.y;
+            this.x = this.net.x;
+            this.y = this.net.y;
         }
         Lightning.prototype.update = function () {
-            this.x = this.cloud.x;
-            this.y = this.cloud.y;
+            this.x = this.net.x;
+            this.y = this.net.y;
         };
         return Lightning;
     })(createjs.Sprite);

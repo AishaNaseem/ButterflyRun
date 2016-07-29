@@ -11,8 +11,8 @@ var constants;
     constants.LEVEL2_STATE = 4;
     // Game Constants
     constants.CLOUD_NUM = 3;
-    constants.LABEL_FONT = "28px Dock51";
-    constants.LABEL_COLOUR = "#C8CFF3";
+    constants.LABEL_FONT = "28px Arial";
+    constants.LABEL_COLOUR = "#660033";
     constants.PLANE_LIVES = 3;
     constants.ENEMY_NUM = 1;
     // Layer Constants
