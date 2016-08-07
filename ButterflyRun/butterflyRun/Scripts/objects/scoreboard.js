@@ -32,6 +32,7 @@ var objects;
                 this.scoreLabel.fontSize(25);
                 this.scoreValueLabel.fontSize(25);
             }
+            this.currentLevel = 1;
             this.update();
             this.showScoreBoard();
         }
@@ -54,7 +55,6 @@ var objects;
             game.removeChild(this.scoreValueLabel);
         };
         return Scoreboard;
-    })();
+    }());
     objects.Scoreboard = Scoreboard;
 })(objects || (objects = {}));
-//# sourceMappingURL=scoreboard.js.map

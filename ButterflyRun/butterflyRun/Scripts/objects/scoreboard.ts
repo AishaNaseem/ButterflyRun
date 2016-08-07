@@ -6,6 +6,7 @@ module objects {
         lives: number;
         score: number;
         highScore: number;
+        currentLevel: number;
         livesValueLabel: objects.Label;
         livesLabel: objects.Label;
         scoreValueLabel: objects.Label;
@@ -45,7 +46,7 @@ module objects {
                 this.scoreLabel.fontSize(25);
                 this.scoreValueLabel.fontSize(25);
             }
-
+            this.currentLevel = 1;
 
             this.update();
 
@@ -68,11 +69,14 @@ module objects {
             this.scoreValueLabel.text = this.scoreValueLabelString;
         }
 
+
         destroy() {
             game.removeChild(this.livesLabel);
             game.removeChild(this.livesValueLabel);
             game.removeChild(this.scoreLabel);
             game.removeChild(this.scoreValueLabel);
         }
+
+        
     }
 } 
