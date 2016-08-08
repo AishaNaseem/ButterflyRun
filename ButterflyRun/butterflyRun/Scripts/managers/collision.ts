@@ -46,7 +46,7 @@ module managers {
             return result;
         }
 
-        // check collision between butterfly and any  object
+        // check collision between butterfly and net  object
         private planeAndCloud(net: objects.Net) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();

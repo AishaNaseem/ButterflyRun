@@ -30,7 +30,7 @@ var managers;
             result = Math.sqrt(xPoints + yPoints);
             return result;
         };
-        // check collision between butterfly and any  object
+        // check collision between butterfly and net  object
         Collision.prototype.planeAndCloud = function (net) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();

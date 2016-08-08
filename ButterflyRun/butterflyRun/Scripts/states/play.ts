@@ -38,6 +38,7 @@ module states {
         if ((scoreboard.score == levelScore) && (scoreboard.currentLevel == 1)) {
             scoreboard.currentLevel += 1;
             scoreboard.lives += 3;
+            scoreboard.pollencount = 10;
             // Display the Level Label
             //levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
             //createjs.Sound.play("levelstart");
