@@ -188,6 +188,7 @@
     <TypeScriptCompile Include="Scripts\lib\tweenjs.d.ts" />
     <TypeScriptCompile Include="Scripts\managers\asset.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
+    <TypeScriptCompile Include="Scripts\managers\pollenmanager.ts" />
     <TypeScriptCompile Include="Scripts\objects\butterfly.ts" />
     <TypeScriptCompile Include="Scripts\objects\button.ts" />
     <TypeScriptCompile Include="Scripts\objects\enemy.ts" />
@@ -200,10 +201,12 @@
     <TypeScriptCompile Include="Scripts\objects\lightning.ts" />
     <TypeScriptCompile Include="Scripts\objects\net.ts" />
     <TypeScriptCompile Include="Scripts\objects\plant.ts" />
+    <TypeScriptCompile Include="Scripts\objects\pollen.ts" />
     <TypeScriptCompile Include="Scripts\objects\scoreboard.ts" />
     <TypeScriptCompile Include="Scripts\objects\stats.ts" />
     <TypeScriptCompile Include="Scripts\states\gameover.ts" />
     <TypeScriptCompile Include="Scripts\states\instructions.ts" />
+    <TypeScriptCompile Include="Scripts\states\level2.ts" />
     <TypeScriptCompile Include="Scripts\states\menu.ts" />
     <TypeScriptCompile Include="Scripts\states\play.ts" />
   </ItemGroup>

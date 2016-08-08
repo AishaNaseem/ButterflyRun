@@ -3,20 +3,16 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-// Explosion Class
 var objects;
 (function (objects) {
-    var Explosion = (function (_super) {
-        __extends(Explosion, _super);
-        function Explosion(game) {
-            _super.call(this, "bigexplosion");
+    var Pollen = (function (_super) {
+        __extends(Pollen, _super);
+        function Pollen(game) {
+            _super.call(this, "bigpollen");
             this.game = game;
             this.game.addChild(this);
         }
-        Explosion.prototype.remove = function () {
-            this.game.removeChild(this);
-        };
-        return Explosion;
+        return Pollen;
     })(objects.GameObject);
-    objects.Explosion = Explosion;
+    objects.Pollen = Pollen;
 })(objects || (objects = {}));

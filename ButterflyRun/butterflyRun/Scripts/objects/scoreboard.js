@@ -55,6 +55,6 @@ var objects;
             game.removeChild(this.scoreValueLabel);
         };
         return Scoreboard;
-    }());
+    })();
     objects.Scoreboard = Scoreboard;
 })(objects || (objects = {}));

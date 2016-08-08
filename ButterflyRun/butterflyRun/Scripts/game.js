@@ -18,6 +18,8 @@
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 /// <reference path="states/instructions.ts" />
+/// <reference path="states/level2.ts" />
+/// <reference path="managers/pollenmanager.ts" />
 // Butterfly Run 2016 
 // game containers
 var canvas;
@@ -34,6 +36,7 @@ var scoreboard;
 var levelLabel;
 // object managers
 var collision;
+var pollenManager;
 var tryAgain;
 // global game variables
 var screenScale;
@@ -122,6 +125,11 @@ function changeState(state) {
             currentStateFunction = states.playState;
             states.play();
             break;
+        case constants.LEVEL2_STATE:
+            // instantiate play screen
+            currentStateFunction = states.Level2State;
+            states.Level2();
+            break;
         case constants.GAME_OVER_STATE:
             currentStateFunction = states.gameOverState;
             // instantiate game over screen
@@ -134,4 +142,3 @@ function changeState(state) {
             break;
     }
 }
-//# sourceMappingURL=game.js.map

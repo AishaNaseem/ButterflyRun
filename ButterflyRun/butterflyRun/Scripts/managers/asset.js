@@ -8,6 +8,7 @@ var managers;
         { id: "explosion", src: "assets/sounds/explosion.mp3" },
         { id: "flowerpicking", src: "assets/sounds/flowerpicking.mp3" },
         { id: "levelstart", src: "assets/sounds/LevelStart.mp3" },
+        { id: "pollen", src: "assets/sounds/explosion.mp3" },
     ];
     // SpriteSheet Data Object
     var spriteSheetData = {
@@ -70,7 +71,7 @@ var managers;
         ],
         "animations": {
             "backbutton": [0],
-            "bigbullet": [1],
+            "bigpollen": [1],
             "bigexplosion": {
                 frames: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
                 next: false,
@@ -244,4 +245,3 @@ var managers;
     })();
     managers.Assets = Assets;
 })(managers || (managers = {}));
-//# sourceMappingURL=asset.js.map

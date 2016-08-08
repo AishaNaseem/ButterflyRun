@@ -13,16 +13,16 @@ module managers {
         private flower: objects.Flower;
         private net = [];
         private enemies = [];
-        private bullets = [];
+        private pollens = [];
         private scoreboard: objects.Scoreboard;
         private game: createjs.Container;
 
-        constructor(butterfly: objects.Butterfly, flower: objects.Flower, net, scoreboard: objects.Scoreboard, game: createjs.Container, enemies?, bullets?) {
+        constructor(butterfly: objects.Butterfly, flower: objects.Flower, net, scoreboard: objects.Scoreboard, game: createjs.Container, enemies?, pollens?) {
             this.butterfly = butterfly;
             this.flower = flower;
             this.net = net;
             this.enemies = enemies;
-            this.bullets = bullets;
+            this.pollens = pollens;
             this.scoreboard = scoreboard;
 
             this.game = game;
@@ -46,7 +46,7 @@ module managers {
             return result;
         }
 
-        // check collision between plane and any cloud object
+        // check collision between butterfly and any  object
         private planeAndCloud(net: objects.Net) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
@@ -109,11 +109,11 @@ module managers {
                 explosion.x = this.butterfly.x;
                 explosion.y = this.butterfly.y;
                 explosion.on("animationend", function (e) { explosion.remove(); });
-                this.butterfly.gotoAndPlay("flickerPlane");
+                this.butterfly.gotoAndPlay("flickerbutterfly");
                 this.butterfly.onStage = false;
                 setTimeout(function (e) {
-                    this.plane.gotoAndPlay("plane");
-                    this.plane.onStage = true;
+                    this.butterfly.gotoAndPlay("plane");
+                    this.butterfly.onStage = true;
                 }, 2000);
 
                 this.scoreboard.lives -= 1;

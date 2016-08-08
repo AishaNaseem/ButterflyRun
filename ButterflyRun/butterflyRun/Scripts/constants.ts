@@ -11,7 +11,7 @@
     export var LEVEL2_STATE: number = 4;
 
     // Game Constants
-    export var CLOUD_NUM: number = 3;
+    export var CLOUD_NUM: number = 2;
     export var LABEL_FONT = "28px Arial";
     export var LABEL_COLOUR = "#660033";
     export var PLANE_LIVES = 3;

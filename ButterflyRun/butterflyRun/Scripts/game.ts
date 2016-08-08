@@ -18,6 +18,8 @@
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 /// <reference path="states/instructions.ts" />
+/// <reference path="states/level2.ts" />
+/// <reference path="managers/pollenmanager.ts" />
 
 // Butterfly Run 2016 
 
@@ -38,7 +40,7 @@ var levelLabel: objects.LevelLabel;
 
 // object managers
 var collision: managers.Collision;
-
+var pollenManager: managers.PollenManager;
 
 var tryAgain: objects.Button;
 
@@ -156,6 +158,11 @@ function changeState(state: number): void {
             // instantiate play screen
             currentStateFunction = states.playState;
             states.play();
+            break;
+        case constants.LEVEL2_STATE:
+            // instantiate play screen
+            currentStateFunction = states.Level2State;
+            states.Level2();
             break;
 
         

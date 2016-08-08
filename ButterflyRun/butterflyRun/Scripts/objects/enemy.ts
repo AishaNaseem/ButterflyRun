@@ -2,13 +2,13 @@
 module objects {
     export class Enemy extends objects.GameObject {
         game: createjs.Container;
-        dy: number;
+        dx: number;
         engineSound: createjs.SoundInstance;
         private enginePlay: boolean;
         constructor(game: createjs.Container) {
             super("enemy");
             this.game = game;
-            this.dy = 7;
+            this.dx = 7;
             this.enginePlay = false;
             this.engineSound = createjs.Sound.play("enemyEngine");
             this.reset();
@@ -16,12 +16,12 @@ module objects {
         }
 
         update() {
-            this.y += this.dy;
-            if (this.y > -stage.canvas.height) {
+            this.x += this.dx;
+            if (this.x > -stage.canvas.width) {
                 this.enginePlay = true;
             }
 
-            if (this.y > stage.canvas.height * 2) {
+            if (this.x > stage.canvas.width * 2) {
                 this.reset();
             }
             this.checkEngine();
@@ -31,8 +31,8 @@ module objects {
             this.engineSound.stop();
             this.enginePlay = false;
             // Reset the island image location
-            this.x = Math.floor(Math.random() * stage.canvas.width);
-            this.y = -stage.canvas.height * 5;
+            this.y = Math.floor(Math.random() * stage.canvas.height);
+            this.x = -stage.canvas.width * 5;
         }
 
         checkEngine() {

@@ -36,8 +36,10 @@ var states;
             scoreboard.currentLevel += 1;
             scoreboard.lives += 3;
             // Display the Level Label
-            levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
-            createjs.Sound.play("levelstart");
+            //levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
+            //createjs.Sound.play("levelstart");
+            currentState = constants.LEVEL2_STATE;
+            changeState(currentState);
         }
         // Level 3 scenario
         if ((scoreboard.score == (levelScore * 2)) && (scoreboard.currentLevel == 2)) {

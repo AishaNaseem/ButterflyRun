@@ -10,7 +10,7 @@ var constants;
     constants.INSTRUCTIONS_STATE = 3;
     constants.LEVEL2_STATE = 4;
     // Game Constants
-    constants.CLOUD_NUM = 3;
+    constants.CLOUD_NUM = 2;
     constants.LABEL_FONT = "28px Arial";
     constants.LABEL_COLOUR = "#660033";
     constants.PLANE_LIVES = 3;
@@ -24,4 +24,3 @@ var constants;
     constants.SCOREBOARD_LEVEL = 7;
     constants.LEVEL_LABEL_LEVEL = 8;
 })(constants || (constants = {}));
-//# sourceMappingURL=constants.js.map

@@ -9,7 +9,7 @@
 /// <reference path="../objects/garden.ts" />
 /// <reference path="../managers/collision.ts" />
 module states {
-    const levelScore: number = 1000;
+    const levelScore: number = 200;
     export function playState() {
         garden.update();
         plant.update();
@@ -39,8 +39,11 @@ module states {
             scoreboard.currentLevel += 1;
             scoreboard.lives += 3;
             // Display the Level Label
-            levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
-            createjs.Sound.play("levelstart");
+            //levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
+            //createjs.Sound.play("levelstart");
+            
+            currentState = constants.LEVEL2_STATE;
+            changeState(currentState);
         }
 
         // Level 3 scenario

@@ -31,4 +31,3 @@ var objects;
     })(objects.GameObject);
     objects.Butterfly = Butterfly;
 })(objects || (objects = {}));
-//# sourceMappingURL=butterfly.js.map

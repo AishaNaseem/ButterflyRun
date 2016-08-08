@@ -6,15 +6,15 @@ var managers;
 (function (managers) {
     // Collision Manager Class
     var Collision = (function () {
-        function Collision(butterfly, flower, net, scoreboard, game, enemies, bullets) {
+        function Collision(butterfly, flower, net, scoreboard, game, enemies, pollens) {
             this.net = [];
             this.enemies = [];
-            this.bullets = [];
+            this.pollens = [];
             this.butterfly = butterfly;
             this.flower = flower;
             this.net = net;
             this.enemies = enemies;
-            this.bullets = bullets;
+            this.pollens = pollens;
             this.scoreboard = scoreboard;
             this.game = game;
         }
@@ -30,7 +30,7 @@ var managers;
             result = Math.sqrt(xPoints + yPoints);
             return result;
         };
-        // check collision between plane and any cloud object
+        // check collision between butterfly and any  object
         Collision.prototype.planeAndCloud = function (net) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
@@ -90,11 +90,11 @@ var managers;
                 explosion.x = this.butterfly.x;
                 explosion.y = this.butterfly.y;
                 explosion.on("animationend", function (e) { explosion.remove(); });
-                this.butterfly.gotoAndPlay("flickerPlane");
+                this.butterfly.gotoAndPlay("flickerbutterfly");
                 this.butterfly.onStage = false;
                 setTimeout(function (e) {
-                    this.plane.gotoAndPlay("plane");
-                    this.plane.onStage = true;
+                    this.butterfly.gotoAndPlay("plane");
+                    this.butterfly.onStage = true;
                 }, 2000);
                 this.scoreboard.lives -= 1;
                 enemy.reset();
@@ -116,4 +116,3 @@ var managers;
     })();
     managers.Collision = Collision;
 })(managers || (managers = {}));
-//# sourceMappingURL=collision.js.map

@@ -11,18 +11,18 @@ var objects;
         function Enemy(game) {
             _super.call(this, "enemy");
             this.game = game;
-            this.dy = 7;
+            this.dx = 7;
             this.enginePlay = false;
             this.engineSound = createjs.Sound.play("enemyEngine");
             this.reset();
             this.game.addChild(this);
         }
         Enemy.prototype.update = function () {
-            this.y += this.dy;
-            if (this.y > -stage.canvas.height) {
+            this.x += this.dx;
+            if (this.x > -stage.canvas.width) {
                 this.enginePlay = true;
             }
-            if (this.y > stage.canvas.height * 2) {
+            if (this.x > stage.canvas.width * 2) {
                 this.reset();
             }
             this.checkEngine();
@@ -31,8 +31,8 @@ var objects;
             this.engineSound.stop();
             this.enginePlay = false;
             // Reset the island image location
-            this.x = Math.floor(Math.random() * stage.canvas.width);
-            this.y = -stage.canvas.height * 5;
+            this.y = Math.floor(Math.random() * stage.canvas.height);
+            this.x = -stage.canvas.width * 5;
         };
         Enemy.prototype.checkEngine = function () {
             if ((this.enginePlay == true) && (this.engineSound.playState != "playSucceeded")) {
@@ -46,4 +46,3 @@ var objects;
     })(objects.GameObject);
     objects.Enemy = Enemy;
 })(objects || (objects = {}));
-//# sourceMappingURL=enemy.js.map
