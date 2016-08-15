@@ -57,9 +57,7 @@ module states {
             gameInstructions[line] = new createjs.Text(instructionsArray[line], instructionsFont, constants.LABEL_COLOUR);
             gameInstructions[line].x = stage.canvas.width * 0.05;
             gameInstructions[line].y = 20 + (lineSpace * line);
-            // gameInstructions[line].y = stage.canvas.height * 0.05;
-            //gameInstructions[line].x = 20 + (lineSpace * line);
-            game.addChild(gameInstructions[line]);
+           game.addChild(gameInstructions[line]);
         }
 
         // Display Back Button

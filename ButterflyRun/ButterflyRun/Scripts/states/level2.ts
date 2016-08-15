@@ -51,8 +51,7 @@ module states {
             // Display the Level Label
             levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
             createjs.Sound.play("levelstart");
-            //currentState = constants.LEVEL3_STATE;
-            //changeState(currentState);
+            
         }
     }
 

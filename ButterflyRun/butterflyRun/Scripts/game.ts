@@ -100,7 +100,7 @@ function showStartScreen() {
     game.addChild(introButterfly);
 
 
-    // Add Mail Pilot Label
+    // Add Butterfly Label
     var butterflyRunLabel = new createjs.Text("BUTTERFLY RUN", screenFont, constants.LABEL_COLOUR);
     butterflyRunLabel.regX = butterflyRunLabel.getBounds().width * 0.1;
     butterflyRunLabel.regY = butterflyRunLabel.getBounds().height * 0.1;

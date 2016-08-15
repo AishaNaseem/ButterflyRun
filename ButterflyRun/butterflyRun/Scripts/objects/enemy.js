@@ -46,4 +46,3 @@ var objects;
     })(objects.GameObject);
     objects.Enemy = Enemy;
 })(objects || (objects = {}));
-//# sourceMappingURL=enemy.js.map

@@ -16,4 +16,3 @@ var objects;
     })(objects.GameObject);
     objects.Pollen = Pollen;
 })(objects || (objects = {}));
-//# sourceMappingURL=pollen.js.map

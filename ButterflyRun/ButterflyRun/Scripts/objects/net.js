@@ -31,16 +31,11 @@ var objects;
             this.y += this.dy;
             this.x += this.dx;
             this.lightning.update();
-            //if (this.y > stage.canvas.height + this.height) {
             if (this.x > stage.canvas.width + this.width) {
                 this.reset();
             }
         };
         Net.prototype.reset = function () {
-            //this.x = Math.floor(Math.random() * stage.canvas.width);
-            //this.dy = Math.floor(Math.random() * 5 + 5);
-            //this.dx = Math.floor(Math.random() * -3) + Math.floor(Math.random() * 3);
-            //this.y = -this.height;
             this.y = Math.floor(Math.random() * stage.canvas.height);
             this.dx = Math.floor(Math.random() * 5 + 5);
             this.dy = Math.floor(Math.random() * -3) + Math.floor(Math.random() * 3);
@@ -53,4 +48,3 @@ var objects;
     })(objects.GameObject);
     objects.Net = Net;
 })(objects || (objects = {}));
-//# sourceMappingURL=net.js.map

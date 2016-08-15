@@ -37,4 +37,3 @@ var objects;
     })(createjs.Sprite);
     objects.Lightning = Lightning;
 })(objects || (objects = {}));
-//# sourceMappingURL=lightning.js.map

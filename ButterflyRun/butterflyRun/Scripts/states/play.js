@@ -32,12 +32,10 @@ var states;
             changeState(currentState);
         }
         // Level 2 scenario
-        if ((scoreboard.score == 200) && (scoreboard.currentLevel == 1)) {
-            scoreboard.currentLevel = 2;
+        if ((scoreboard.score == levelScore) && (scoreboard.currentLevel == 1)) {
+            scoreboard.currentLevel += 1;
             scoreboard.lives += 3;
             scoreboard.pollencount = 10;
-            // Display the Level Label
-            //levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
             currentState = constants.LEVEL2_STATE;
             changeState(currentState);
         }
@@ -69,4 +67,3 @@ var states;
     }
     states.play = play;
 })(states || (states = {}));
-//# sourceMappingURL=play.js.map

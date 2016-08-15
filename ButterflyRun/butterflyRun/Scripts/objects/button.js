@@ -30,4 +30,3 @@ var objects;
     })(objects.GameObject);
     objects.Button = Button;
 })(objects || (objects = {}));
-//# sourceMappingURL=button.js.map

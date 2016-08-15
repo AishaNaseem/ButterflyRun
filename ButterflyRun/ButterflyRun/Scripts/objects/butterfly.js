@@ -13,14 +13,12 @@ var objects;
             _super.call(this, "butterfly");
             this.onStage = true;
             this.game = game;
-            //this.y = 430;
             this.x = 400;
             game.addChild(this);
             this.engineSound = createjs.Sound.play('butterfly', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 0.1, 0);
         }
         Butterfly.prototype.update = function () {
-            // Change plane position with some easing on update
-            //this.x += (stage.mouseX - this.x) * 0.3;
+            // Change butterfly position with some easing on update
             this.y += (stage.mouseY - this.y) * 0.3;
         };
         Butterfly.prototype.destroy = function () {
@@ -31,4 +29,3 @@ var objects;
     })(objects.GameObject);
     objects.Butterfly = Butterfly;
 })(objects || (objects = {}));
-//# sourceMappingURL=butterfly.js.map

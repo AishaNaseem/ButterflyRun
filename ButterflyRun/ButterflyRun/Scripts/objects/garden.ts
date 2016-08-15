@@ -14,16 +14,14 @@ module objects {
             this.height = this.getBounds().height;
             this.reset();
 
-            //this.dy = 5;
+            
             this.dx = 0.5;
 
             game.addChild(this);
         }
 
         update() {
-            //  this.y += this.dy;
-            //if (this.y >= 0) {
-            //  this.reset();
+            
             this.x += this.dx;
             if (this.x >= 0) {
                 this.reset();
@@ -31,7 +29,7 @@ module objects {
         }
 
         reset() {
-            //this.y = -960;
+            
             this.x = -700;
         }
 

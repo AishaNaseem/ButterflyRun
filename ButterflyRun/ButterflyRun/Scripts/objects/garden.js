@@ -15,21 +15,16 @@ var objects;
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.reset();
-            //this.dy = 5;
             this.dx = 0.5;
             game.addChild(this);
         }
         Garden.prototype.update = function () {
-            //  this.y += this.dy;
-            //if (this.y >= 0) {
-            //  this.reset();
             this.x += this.dx;
             if (this.x >= 0) {
                 this.reset();
             }
         };
         Garden.prototype.reset = function () {
-            //this.y = -960;
             this.x = -700;
         };
         Garden.prototype.destroy = function () {
@@ -39,4 +34,3 @@ var objects;
     })(createjs.Bitmap);
     objects.Garden = Garden;
 })(objects || (objects = {}));
-//# sourceMappingURL=garden.js.map

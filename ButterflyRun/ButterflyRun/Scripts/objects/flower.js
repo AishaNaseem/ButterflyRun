@@ -23,11 +23,9 @@ var objects;
             }
             else {
                 //position flower off stage
-                //this.y = -50;
                 this.x = -50;
             }
             // check if plant has been reset
-            // if (island.image.y < 0) {
             if (plant.image.x < 0) {
                 this.onStage = true;
                 this.alpha = 1;
@@ -37,4 +35,3 @@ var objects;
     })(objects.GameObject);
     objects.Flower = Flower;
 })(objects || (objects = {}));
-//# sourceMappingURL=flower.js.map

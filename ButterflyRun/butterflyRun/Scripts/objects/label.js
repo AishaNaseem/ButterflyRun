@@ -26,4 +26,3 @@ var objects;
     })(createjs.BitmapText);
     objects.Label = Label;
 })(objects || (objects = {}));
-//# sourceMappingURL=label.js.map

@@ -6,14 +6,11 @@ var objects;
         function Plant(game) {
             this.game = game;
             this.reset();
-            //this.dy = 5;
             this.dx = 5;
             game.addChild(this.image);
         }
         Plant.prototype.update = function () {
-            //this.image.y += this.dy;
             this.image.x += this.dx;
-            //if (this.image.y > stage.canvas.height + this.height) {
             if (this.image.x > stage.canvas.width + this.width) {
                 game.removeChildAt(1);
                 this.reset();
@@ -37,8 +34,6 @@ var objects;
         Plant.prototype.reset = function () {
             // Swap the image
             this.pickImage();
-            //this.image.x = Math.floor(Math.random() * stage.canvas.width);
-            //this.image.y = -this.height;
             this.image.y = Math.floor(Math.random() * stage.canvas.height);
             this.image.x = -this.width;
         };
@@ -49,4 +44,3 @@ var objects;
     })();
     objects.Plant = Plant;
 })(objects || (objects = {}));
-//# sourceMappingURL=plant.js.map

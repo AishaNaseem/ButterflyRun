@@ -39,10 +39,7 @@ module states {
             scoreboard.currentLevel += 1;
             scoreboard.lives += 3;
             scoreboard.pollencount = 10;
-            // Display the Level Label
-            //levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
-            //createjs.Sound.play("levelstart");
-            
+                        
             currentState = constants.LEVEL2_STATE;
             changeState(currentState);
         }
