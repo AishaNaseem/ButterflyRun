@@ -245,3 +245,4 @@ var managers;
     })();
     managers.Assets = Assets;
 })(managers || (managers = {}));
+//# sourceMappingURL=asset.js.map

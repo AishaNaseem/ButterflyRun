@@ -53,3 +53,4 @@ var objects;
     })(objects.GameObject);
     objects.Net = Net;
 })(objects || (objects = {}));
+//# sourceMappingURL=net.js.map

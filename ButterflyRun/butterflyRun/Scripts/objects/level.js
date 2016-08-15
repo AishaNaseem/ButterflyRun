@@ -31,3 +31,4 @@ var objects;
     })(objects.Label);
     objects.LevelLabel = LevelLabel;
 })(objects || (objects = {}));
+//# sourceMappingURL=level.js.map

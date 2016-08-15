@@ -64,3 +64,4 @@ var managers;
     })();
     managers.PollenManager = PollenManager;
 })(managers || (managers = {}));
+//# sourceMappingURL=pollenmanager.js.map

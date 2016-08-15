@@ -49,3 +49,4 @@ var objects;
     })();
     objects.Plant = Plant;
 })(objects || (objects = {}));
+//# sourceMappingURL=plant.js.map

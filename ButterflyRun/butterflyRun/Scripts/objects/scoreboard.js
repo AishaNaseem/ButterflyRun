@@ -74,3 +74,4 @@ var objects;
     })();
     objects.Scoreboard = Scoreboard;
 })(objects || (objects = {}));
+//# sourceMappingURL=scoreboard.js.map
