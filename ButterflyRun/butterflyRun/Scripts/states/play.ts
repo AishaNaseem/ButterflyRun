@@ -46,28 +46,6 @@ module states {
             currentState = constants.LEVEL2_STATE;
             changeState(currentState);
         }
-
-        // Level 3 scenario
-        if ((scoreboard.score == (levelScore *2)) && (scoreboard.currentLevel == 2)) {
-            scoreboard.currentLevel += 1;
-            scoreboard.lives += 3;
-            // Display the Level Label
-            levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
-            createjs.Sound.play("levelstart");
-        }
-
-        
-
-        //for (var nCount = 1; nCount <= 5; nCount++) {
-        //    if ((scoreboard.score == (levelScore * nCount)) && (scoreboard.currentLevel == (scoreboard.currentLevel + (nCount-1)))) {
-        //        scoreboard.currentLevel += 1;
-        //        scoreboard.lives += 3;
-        //        // Display the Level Label
-        //        levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
-        //        createjs.Sound.play("levelstart");
-        //    }
-        //}
-
       }
 
     // play state Function

@@ -57,7 +57,7 @@ module states {
 
         // Display Game Over
         gameNameLabel = new objects.Label(stage.canvas.width / 3, 30, "Butterfly Run");
-        
+        gameNameLabel.fontSize(40);
         //Adjust Game Title for Screen Size
         if (screenScale < 1) {
             gameNameLabel.fontSize(20);

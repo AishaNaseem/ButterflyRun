@@ -37,6 +37,15 @@ var states;
             currentState = constants.GAME_OVER_STATE;
             changeState(currentState);
         }
+        // Level 3 scenario
+        if ((scoreboard.score == 400) && (scoreboard.currentLevel == 2)) {
+            scoreboard.currentLevel = 3;
+            scoreboard.lives += 3;
+            scoreboard.pollencount += 50;
+            // Display the Level Label
+            levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
+            createjs.Sound.play("levelstart");
+        }
     }
     states.Level2State = Level2State;
     // Fire the bullet when the mouse is clicked
