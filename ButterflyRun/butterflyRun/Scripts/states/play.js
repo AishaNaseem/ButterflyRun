@@ -32,33 +32,15 @@ var states;
             changeState(currentState);
         }
         // Level 2 scenario
-        if ((scoreboard.score == levelScore) && (scoreboard.currentLevel == 1)) {
-            scoreboard.currentLevel += 1;
+        if ((scoreboard.score == 200) && (scoreboard.currentLevel == 1)) {
+            scoreboard.currentLevel = 2;
             scoreboard.lives += 3;
             scoreboard.pollencount = 10;
             // Display the Level Label
             //levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
-            //createjs.Sound.play("levelstart");
             currentState = constants.LEVEL2_STATE;
             changeState(currentState);
         }
-        // Level 3 scenario
-        if ((scoreboard.score == (levelScore * 2)) && (scoreboard.currentLevel == 2)) {
-            scoreboard.currentLevel += 1;
-            scoreboard.lives += 3;
-            // Display the Level Label
-            levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
-            createjs.Sound.play("levelstart");
-        }
-        //for (var nCount = 1; nCount <= 5; nCount++) {
-        //    if ((scoreboard.score == (levelScore * nCount)) && (scoreboard.currentLevel == (scoreboard.currentLevel + (nCount-1)))) {
-        //        scoreboard.currentLevel += 1;
-        //        scoreboard.lives += 3;
-        //        // Display the Level Label
-        //        levelLabel = new objects.LevelLabel("level " + scoreboard.currentLevel);
-        //        createjs.Sound.play("levelstart");
-        //    }
-        //}
     }
     states.playState = playState;
     // play state Function
@@ -87,3 +69,4 @@ var states;
     }
     states.play = play;
 })(states || (states = {}));
+//# sourceMappingURL=play.js.map
