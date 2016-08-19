@@ -8,6 +8,7 @@ by using Mail Pilot Template provided by Professor
 /// <reference path="objects/net.ts" />
 /// <reference path="objects/plant.ts" />
 /// <reference path="objects/garden.ts" />
+/// <reference path="objects/garden2.ts" />
 /// <reference path="objects/butterfly.ts" />
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="objects/label.ts" />
@@ -148,3 +149,4 @@ function changeState(state) {
             break;
     }
 }
+//# sourceMappingURL=game.js.map

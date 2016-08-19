@@ -16,6 +16,7 @@ var objects;
             this.regY = this.height * 0.5;
         }
         return GameObject;
-    })(createjs.Sprite);
+    }(createjs.Sprite));
     objects.GameObject = GameObject;
 })(objects || (objects = {}));
+//# sourceMappingURL=gameobject.js.map

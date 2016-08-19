@@ -10,7 +10,7 @@ by using Mail Pilot Template provided by Professor
 /// <reference path="../objects/plant.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/level.ts" />
-/// <reference path="../objects/garden.ts" />
+/// <reference path="../objects/garden2.ts" />
 /// <reference path="../objects/butterfly.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../objects/stats.ts" />
@@ -49,7 +49,7 @@ module states {
             changeState(currentState);
         }
         // Level 3 scenario
-         if ((scoreboard.score == 400) && (scoreboard.currentLevel == 2)) {
+         if ((scoreboard.score == 2000) && (scoreboard.currentLevel == 2)) {
                     scoreboard.currentLevel = 3;
                         scoreboard.lives += 3;
                         scoreboard.pollencount += 50;
@@ -75,7 +75,7 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        garden = new objects.Garden(game);
+        garden = new objects.Garden2(game);
         plant = new objects.Plant(game);
         flower = new objects.Flower(plant, game);
         butterfly = new objects.Butterfly(game);

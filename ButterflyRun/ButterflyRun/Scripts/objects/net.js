@@ -10,8 +10,8 @@ var objects;
     var Net = (function (_super) {
         __extends(Net, _super);
         function Net(game) {
-            this.game = game;
             _super.call(this, "netpic");
+            this.game = game;
             // Adjust Image Scale for Screen Width
             if (screenScale < 1) {
                 this.scaleX = screenScale;
@@ -45,6 +45,7 @@ var objects;
             game.removeChild(this);
         };
         return Net;
-    })(objects.GameObject);
+    }(objects.GameObject));
     objects.Net = Net;
 })(objects || (objects = {}));
+//# sourceMappingURL=net.js.map

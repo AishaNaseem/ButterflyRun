@@ -12,8 +12,9 @@ module objects {
         dy: number;
         dx: number;
         constructor(game: createjs.Container) {
-            this.game = game;
             super("netpic");
+            this.game = game;
+            
 
             // Adjust Image Scale for Screen Width
             if (screenScale < 1) {

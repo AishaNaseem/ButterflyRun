@@ -61,6 +61,7 @@ var managers;
             }
         }; // end destroyBullet
         return PollenManager;
-    })();
+    }());
     managers.PollenManager = PollenManager;
 })(managers || (managers = {}));
+//# sourceMappingURL=pollenmanager.js.map

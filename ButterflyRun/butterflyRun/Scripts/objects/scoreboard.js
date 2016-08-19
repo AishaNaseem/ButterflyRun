@@ -71,6 +71,7 @@ var objects;
             game.removeChild(this.pollencountValueLabel);
         };
         return Scoreboard;
-    })();
+    }());
     objects.Scoreboard = Scoreboard;
 })(objects || (objects = {}));
+//# sourceMappingURL=scoreboard.js.map

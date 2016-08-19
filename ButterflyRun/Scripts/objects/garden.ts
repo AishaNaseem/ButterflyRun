@@ -12,8 +12,8 @@ module objects {
         //dy: number;
         dx: number;
         constructor(game: createjs.Container) {
-            this.game = game;
             super(managers.Assets.loader.getResult("garden"));
+            this.game = game;
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.reset();

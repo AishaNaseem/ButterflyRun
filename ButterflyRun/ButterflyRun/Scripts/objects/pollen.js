@@ -13,6 +13,7 @@ var objects;
             this.game.addChild(this);
         }
         return Pollen;
-    })(objects.GameObject);
+    }(objects.GameObject));
     objects.Pollen = Pollen;
 })(objects || (objects = {}));
+//# sourceMappingURL=pollen.js.map

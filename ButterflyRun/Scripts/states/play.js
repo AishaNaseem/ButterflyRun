@@ -14,7 +14,7 @@ by using Mail Pilot Template provided by Professor
 /// <reference path="../managers/collision.ts" />
 var states;
 (function (states) {
-    var levelScore = 200;
+    var levelScore = 1000;
     function playState() {
         garden.update();
         plant.update();
@@ -91,3 +91,4 @@ var states;
     }
     states.play = play;
 })(states || (states = {}));
+//# sourceMappingURL=play.js.map

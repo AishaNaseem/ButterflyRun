@@ -13,7 +13,7 @@ by using Mail Pilot Template provided by Professor
 /// <reference path="../objects/garden.ts" />
 /// <reference path="../managers/collision.ts" />
 module states {
-    const levelScore: number = 200;
+    const levelScore: number = 1000;
     export function playState() {
         garden.update();
         plant.update();

@@ -6,6 +6,7 @@ module managers {
     // Image and Sound Manifest;
     var assetManifest = [
         { id: "garden", src: "assets/images/gardennew.png" },
+        { id: "garden2", src: "assets/images/garden2.jpg" },
         { id: "butterfly", src: "assets/sounds/butterfly.mp3" },
         { id: "gamestart", src: "assets/sounds/gamestart1.mp3" },
         { id: "explosion", src: "assets/sounds/explosion.mp3" },

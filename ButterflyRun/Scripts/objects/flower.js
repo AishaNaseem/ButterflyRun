@@ -38,6 +38,7 @@ var objects;
             }
         };
         return Flower;
-    })(objects.GameObject);
+    }(objects.GameObject));
     objects.Flower = Flower;
 })(objects || (objects = {}));
+//# sourceMappingURL=flower.js.map

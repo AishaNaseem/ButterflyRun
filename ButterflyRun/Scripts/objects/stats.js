@@ -22,6 +22,7 @@ var objects;
             this.text = Math.round(createjs.Ticker.getMeasuredFPS()) + " fps";
         };
         return Stats;
-    })(createjs.Text);
+    }(createjs.Text));
     objects.Stats = Stats;
 })(objects || (objects = {}));
+//# sourceMappingURL=stats.js.map

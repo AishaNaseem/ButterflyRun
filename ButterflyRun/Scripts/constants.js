@@ -28,3 +28,4 @@ var constants;
     constants.SCOREBOARD_LEVEL = 7;
     constants.LEVEL_LABEL_LEVEL = 8;
 })(constants || (constants = {}));
+//# sourceMappingURL=constants.js.map

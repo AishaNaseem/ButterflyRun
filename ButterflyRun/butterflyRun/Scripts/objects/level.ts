@@ -5,9 +5,10 @@
         
         private width: number;
         constructor(levelText: string) {
+            super(0, 0, levelText);
             this.x = stage.canvas.width * 0.5;
             this.y = stage.canvas.height * 0.5;
-            super(this.x, this.y, levelText);
+           
             
             this.dx = 2;
             

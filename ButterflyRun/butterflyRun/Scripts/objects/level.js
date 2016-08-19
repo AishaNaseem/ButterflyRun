@@ -8,9 +8,9 @@ var objects;
     var LevelLabel = (function (_super) {
         __extends(LevelLabel, _super);
         function LevelLabel(levelText) {
+            _super.call(this, 0, 0, levelText);
             this.x = stage.canvas.width * 0.5;
             this.y = stage.canvas.height * 0.5;
-            _super.call(this, this.x, this.y, levelText);
             this.dx = 2;
             this.width = this.getBounds().width;
             this.fontSize(50);
@@ -23,6 +23,7 @@ var objects;
             }
         };
         return LevelLabel;
-    })(objects.Label);
+    }(objects.Label));
     objects.LevelLabel = LevelLabel;
 })(objects || (objects = {}));
+//# sourceMappingURL=level.js.map

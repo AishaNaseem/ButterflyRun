@@ -50,6 +50,7 @@ var objects;
             game.removeChildAt(1);
         };
         return Plant;
-    })();
+    }());
     objects.Plant = Plant;
 })(objects || (objects = {}));
+//# sourceMappingURL=plant.js.map

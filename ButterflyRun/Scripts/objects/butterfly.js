@@ -32,6 +32,7 @@ var objects;
             game.removeChildAt(constants.PLANE_LEVEL);
         };
         return Butterfly;
-    })(objects.GameObject);
+    }(objects.GameObject));
     objects.Butterfly = Butterfly;
 })(objects || (objects = {}));
+//# sourceMappingURL=butterfly.js.map

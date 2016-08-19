@@ -10,8 +10,8 @@ var objects;
     var Garden = (function (_super) {
         __extends(Garden, _super);
         function Garden(game) {
-            this.game = game;
             _super.call(this, managers.Assets.loader.getResult("garden"));
+            this.game = game;
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.reset();
@@ -31,6 +31,7 @@ var objects;
             game.removeChild(this);
         };
         return Garden;
-    })(createjs.Bitmap);
+    }(createjs.Bitmap));
     objects.Garden = Garden;
 })(objects || (objects = {}));
+//# sourceMappingURL=garden.js.map

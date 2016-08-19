@@ -27,6 +27,7 @@ var objects;
             this.alpha = 1;
         };
         return Button;
-    })(objects.GameObject);
+    }(objects.GameObject));
     objects.Button = Button;
 })(objects || (objects = {}));
+//# sourceMappingURL=button.js.map

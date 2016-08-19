@@ -23,6 +23,7 @@ var objects;
             this.scaleY = scale;
         };
         return Label;
-    })(createjs.BitmapText);
+    }(createjs.BitmapText));
     objects.Label = Label;
 })(objects || (objects = {}));
+//# sourceMappingURL=label.js.map

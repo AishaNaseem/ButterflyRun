@@ -17,6 +17,7 @@ var objects;
             this.game.removeChild(this);
         };
         return Explosion;
-    })(objects.GameObject);
+    }(objects.GameObject));
     objects.Explosion = Explosion;
 })(objects || (objects = {}));
+//# sourceMappingURL=explosion.js.map
